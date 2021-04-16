@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New OrderedQuantity{% endblock %}
+
+{% block body %}
+    <h1>Create new OrderedQuantity</h1>
+
+    {{ include('admin_ordered_quantity/_form.html.twig') }}
+
+    <a href="{{ path('admin_ordered_quantity_index') }}">back to list</a>
+{% endblock %}

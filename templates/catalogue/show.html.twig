@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game{% endblock %}
+
+{% block body %}
+    <h1>Game</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ game.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ game.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ game.description }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ game.price }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ game.code }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('uploads/' ~ game.imageFilename )}}" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('catalogue_index') }}">back to list</a>
+
+    
+{% endblock %}

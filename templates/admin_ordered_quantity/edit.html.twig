@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit OrderedQuantity{% endblock %}
+
+{% block body %}
+    <h1>Edit OrderedQuantity</h1>
+
+    {{ include('admin_ordered_quantity/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_ordered_quantity_index') }}">back to list</a>
+
+    {{ include('admin_ordered_quantity/_delete_form.html.twig') }}
+{% endblock %}

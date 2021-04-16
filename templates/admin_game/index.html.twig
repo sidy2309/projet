@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game index{% endblock %}
+
+{% block body %}
+    <h1>Game index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Code</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games %}
+            <tr>
+                <td>{{ game.id }}</td>
+                <td>
+                    <img src="{{ asset('uploads/' ~ game.imageFilename )}}" />
+                </td>
+                <td>{{ game.name }}</td>
+                <td>{{ game.description }}</td>
+                <td>{{ game.price }}</td>
+                <td>{{ game.code }}</td>
+                <td>
+                    <a href="{{ path('admin_game_show', {'id': game.id}) }}">show</a>
+                    <a href="{{ path('admin_game_edit', {'id': game.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_game_new') }}">Create new</a>
+{% endblock %}

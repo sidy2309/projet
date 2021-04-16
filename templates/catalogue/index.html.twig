@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game index{% endblock %}
+
+{% block body %}
+    <h1>Catalogue des jeux</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Code</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in games %}
+            <tr>
+                <td>{{ game.id }}</td>
+                <td>{{ game.name }}</td>
+                <td>{{ game.description }}</td>
+                <td>{{ game.price }}</td>
+                <td>{{ game.code }}</td>
+                <td>    <img src="{{ asset('uploads/' ~ game.imageFilename )}}" />
+                </td>
+                <td>
+                    <a class="btn btn-secondary" href="{{ path('catalogue_show', {'id': game.id}) }}">Détail</a>
+                    
+                      <a class="btn btn-secondary" href="{{ path('cart_add', {'id': game.id}) }}">Ajouter dans le panier</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
