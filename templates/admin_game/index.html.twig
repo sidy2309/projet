@@ -29,8 +29,8 @@
                 <td>{{ game.price }}</td>
                 <td>{{ game.code }}</td>
                 <td>
-                    <a href="{{ path('admin_game_show', {'id': game.id}) }}">show</a>
-                    <a href="{{ path('admin_game_edit', {'id': game.id}) }}">edit</a>
+                    <a class="btn btn-light" href="{{ path('admin_game_show', {'id': game.id}) }}">show</a>
+                    <a class="btn btn-success" href="{{ path('admin_game_edit', {'id': game.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_game_new') }}">Create new</a>
+    <a class="btn btn-light" href="{{ path('admin_game_new') }}">Create new</a>
 {% endblock %}

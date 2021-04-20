@@ -19,8 +19,8 @@
                 <td>{{ ordered_quantity.id }}</td>
                 <td>{{ ordered_quantity.quantity }}</td>
                 <td>
-                    <a href="{{ path('admin_ordered_quantity_show', {'id': ordered_quantity.id}) }}">show</a>
-                    <a href="{{ path('admin_ordered_quantity_edit', {'id': ordered_quantity.id}) }}">edit</a>
+                    <a class="btn btn-light" href="{{ path('admin_ordered_quantity_show', {'id': ordered_quantity.id}) }}">show</a>
+                    <a class="btn btn-success" href="{{ path('admin_ordered_quantity_edit', {'id': ordered_quantity.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_ordered_quantity_new') }}">Create new</a>
+    <a class="btn btn-light" href="{{ path('admin_ordered_quantity_new') }}">Create new</a>
 {% endblock %}

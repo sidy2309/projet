@@ -4,10 +4,13 @@
 
 {% block body %}
     <h1>Edit Order</h1>
+    <div class="container">
 
-    {{ include('admin_order/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin_order/_form.html.twig', {'button_label': 'Update'}) }}<br></br>
+    </div>
 
-    <a href="{{ path('admin_order_index') }}">back to list</a>
+    <a class="btn btn-light" href="{{ path('admin_order_index') }}">back to list</a><br></br>
 
-    {{ include('admin_order/_delete_form.html.twig') }}
+    {{ include('admin_order/_delete_form.html.twig') }}<br></br>
+
 {% endblock %}

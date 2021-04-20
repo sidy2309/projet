@@ -23,8 +23,8 @@
                 <td>{{ order.createAt ? order.createAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ order.sendAt ? order.sendAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('admin_order_show', {'id': order.id}) }}">show</a>
-                    <a href="{{ path('admin_order_edit', {'id': order.id}) }}">edit</a>
+                    <a class="btn btn-light" href="{{ path('admin_order_show', {'id': order.id}) }}">show</a>
+                    <a class="btn btn-success" href="{{ path('admin_order_edit', {'id': order.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_order_new') }}">Create new</a>
+    <a class="btn btn-light" href="{{ path('admin_order_new') }}">Create new</a>
 {% endblock %}

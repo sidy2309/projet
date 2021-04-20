@@ -4,8 +4,11 @@
 
 {% block body %}
     <h1>Create new PaymentRequest</h1>
+    <div class="container">
 
-    {{ include('admin_payment_request/_form.html.twig') }}
+     {{ include('admin_payment_request/_form.html.twig') }}
+    
+    </div>
 
-    <a href="{{ path('admin_payment_request_index') }}">back to list</a>
+    <a class="btn btn-light" href="{{ path('admin_payment_request_index') }}">back to list</a>
 {% endblock %}

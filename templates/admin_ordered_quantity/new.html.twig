@@ -4,8 +4,11 @@
 
 {% block body %}
     <h1>Create new OrderedQuantity</h1>
+    <div class="container">
 
-    {{ include('admin_ordered_quantity/_form.html.twig') }}
+        {{ include('admin_ordered_quantity/_form.html.twig') }}
+        
+    </div>
 
-    <a href="{{ path('admin_ordered_quantity_index') }}">back to list</a>
+    <a class="btn btn-light" href="{{ path('admin_ordered_quantity_index') }}">back to list</a>
 {% endblock %}

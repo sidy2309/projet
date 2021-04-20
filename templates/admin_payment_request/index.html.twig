@@ -25,8 +25,8 @@
                 <td>{{ payment_request.validated ? 'Yes' : 'No' }}</td>
                 <td>{{ payment_request.stripeSessionId }}</td>
                 <td>
-                    <a href="{{ path('admin_payment_request_show', {'id': payment_request.id}) }}">show</a>
-                    <a href="{{ path('admin_payment_request_edit', {'id': payment_request.id}) }}">edit</a>
+                    <a class="btn btn-light" href="{{ path('admin_payment_request_show', {'id': payment_request.id}) }}">show</a>
+                    <a class="btn btn-success" href="{{ path('admin_payment_request_edit', {'id': payment_request.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_payment_request_new') }}">Create new</a>
+    <a class="btn btn-light" href="{{ path('admin_payment_request_new') }}">Create new</a>
 {% endblock %}

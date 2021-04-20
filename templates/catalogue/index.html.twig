@@ -1,18 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Game index{% endblock %}
+{% block title %}Catalogue des jeux{% endblock %}
 
 {% block body %}
+<style>
+h1{
+    color:white;
+}
+.table{
+    color:white;
+}
+.image{
+   
+}
+</style>
+
     <h1>Catalogue des jeux</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                
+                <th>Nom</th>
                 <th>Description</th>
-                <th>Price</th>
-                <th>Code</th>
+                <th>Prix</th>
+                
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -20,17 +32,17 @@
         <tbody>
         {% for game in games %}
             <tr>
-                <td>{{ game.id }}</td>
+               
                 <td>{{ game.name }}</td>
                 <td>{{ game.description }}</td>
-                <td>{{ game.price }}</td>
-                <td>{{ game.code }}</td>
-                <td>    <img src="{{ asset('uploads/' ~ game.imageFilename )}}" />
+                <td>{{ game.price }} € </td>
+                
+                <td>    <img class="image" src="{{ asset('uploads/' ~ game.imageFilename )}}" />
                 </td>
                 <td>
-                    <a class="btn btn-secondary" href="{{ path('catalogue_show', {'id': game.id}) }}">Détail</a>
+                    <a class="btn btn-light" href="{{ path('catalogue_show', {'id': game.id}) }}">Détail</a>
                     
-                      <a class="btn btn-secondary" href="{{ path('cart_add', {'id': game.id}) }}">Ajouter dans le panier</a>
+                      <a class="btn btn-light" href="{{ path('cart_add', {'id': game.id}) }}">Ajouter dans le panier</a>
                     
                 </td>
             </tr>
